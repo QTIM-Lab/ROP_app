@@ -1,6 +1,8 @@
 package com.example.ropapp;
 
 import android.app.Activity;
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,15 +18,32 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Popup extends Activity {
+import com.example.ropapp.data.PatientInfo;
+import com.example.ropapp.viewmodel.PatientListViewModel;
+import com.example.ropapp.viewmodel.PopupViewModel;
+
+import javax.inject.Inject;
+
+public class Popup extends AppCompatActivity {
 
     Button close;
     ImageView ret;
+    TextView nameView;
+    PopupViewModel popupViewModel;
+
+    @Inject
+    ViewModelProvider.Factory viewModelFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popup);
+
+        ((ROPApplication) getApplication())
+                .getApplicationComponent()
+                .inject(this);
+
+        popupViewModel = ViewModelProviders.of(this, viewModelFactory).get(PopupViewModel.class);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -39,22 +58,39 @@ public class Popup extends Activity {
         params.y = -20;
         getWindow().setAttributes(params);
 
-//        Bundle extras = getIntent().getExtras();
-
+        nameView = findViewById(R.id.nameView);
+        nameView.requestLayout();
+        nameView.getLayoutParams().width = (int)width;
+        final String name = getIntent().getStringExtra("Name");
+        nameView.setText(name);
 
         close = findViewById(R.id.save);
         ret = findViewById(R.id.imageView2);
-        String path = getIntent().getStringExtra("imagepath");
+        final String path = getIntent().getStringExtra("imagepath");
         Bitmap show = BitmapFactory.decodeFile(path);
+        double h = show.getHeight()*.4;
+        double w = show.getWidth()*.4;
+        ret.requestLayout();
+        ret.getLayoutParams().height = (int)h;
+        ret.getLayoutParams().width = (int)w;
         ret.setImageBitmap(show);
+        final String postMenstrual = getIntent().getStringExtra("Post menstrual age");
 
-        String results = getIntent().getStringExtra("Result");
+        final String results = getIntent().getStringExtra("Result");
+        String towrite = results + "\nPost menstrual age: " + postMenstrual + "weeks";
         TextView display = findViewById(R.id.displayResults);
-        display.setText(results);
+        display.setText(towrite);
+
+        final int age = getIntent().getIntExtra("Age", 0);
+        final String notes = getIntent().getStringExtra("Notes");
+        final String birth = getIntent().getStringExtra("Birthday");
+
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
+                PatientInfo save = new PatientInfo(name, birth, postMenstrual, results, path, "Date", notes, age);
+                popupViewModel.NewPatient(save);
                 finish();
             }
         });

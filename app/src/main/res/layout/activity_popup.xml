@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="false"
     tools:context=".Popup"
     tools:layout_editor_absoluteY="25dp">
 
@@ -11,7 +12,7 @@
         android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="44dp"
         android:text="Save and close"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +22,8 @@
     <TextView
         android:id="@+id/displayResults"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="18dp"
         android:layout_marginEnd="47dp"
         android:layout_marginLeft="47dp"
         android:layout_marginRight="47dp"
@@ -29,6 +31,7 @@
         android:layout_marginTop="48dp"
         android:text="TEXT GOES HERE"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,19 +41,27 @@
         android:id="@+id/imageView2"
         android:layout_width="222dp"
         android:layout_height="284dp"
-        android:layout_marginBottom="450dp"
+        android:layout_marginBottom="27dp"
         android:layout_marginEnd="65dp"
         android:layout_marginLeft="65dp"
         android:layout_marginRight="65dp"
         android:layout_marginStart="65dp"
-        android:layout_marginTop="15dp"
         android:background="#000000"
         android:clickable="false"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="384dp"
+        android:layout_height="36dp"
+        android:background="#710684"
+        android:text="Textview"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/displayResults"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

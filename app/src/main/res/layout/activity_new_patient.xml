@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/image1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2a313d"
+    tools:context=".NewPatient">
+
+    <EditText
+        android:id="@+id/notes"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="344dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:imeOptions="actionSend"
+        android:inputType="textMultiLine"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/imageButton2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
+        android:text="Retake"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.801" />
+
+    <Button
+        android:id="@+id/yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
+        android:text="Keep"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patient name"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintStart_toStartOf="@+id/imageButton2"
+        app:layout_constraintTop_toTopOf="@+id/imageButton2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginBottom="4dp"
+        android:text="Gestational age"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@id/age"
+        app:layout_constraintStart_toStartOf="@+id/imageButton2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notes"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/notes"
+        app:layout_constraintStart_toStartOf="@+id/imageButton2" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/imageButton2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName"
+        app:layout_constraintVertical_weight="0" />
+
+    <EditText
+        android:id="@+id/borth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:hint="MM/DD/YYYY"
+        android:inputType="date"
+        android:imeOptions="actionDone"
+        app:layout_constraintBottom_toTopOf="@+id/notes"
+        app:layout_constraintStart_toStartOf="@+id/imageButton2" />
+
+    <TextView
+        android:id="@+id/textViewBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date of birth"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@id/borth"
+        app:layout_constraintStart_toStartOf="@id/imageButton2" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        android:layout_marginTop="75dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:hint="___ weeks"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/borth"
+        app:layout_constraintStart_toStartOf="@id/imageButton2"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="332dp"
+        android:layout_height="428dp"
+        android:layout_marginBottom="90dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:foregroundGravity="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.384"
+        app:srcCompat="?attr/actionBarDivider" />
+
+</android.support.constraint.ConstraintLayout>
