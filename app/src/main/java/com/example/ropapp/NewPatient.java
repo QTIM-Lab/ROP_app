@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -141,17 +143,35 @@ public class NewPatient extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                if(patientname == null)
+                if(name.getText().toString() == "")
                 {
                     Toast.makeText(getApplicationContext(), "Enter patient name", Toast.LENGTH_SHORT).show();
                 }
-                else if(patientage == 0)
+                else if(page.getText().toString() == "")
                 {
                     Toast.makeText(getApplicationContext(), "Enter gestational age", Toast.LENGTH_SHORT).show();
                 }
-                else if(born == null)
+                else if(birthDate.getText().toString() == "")
                 {
                     Toast.makeText(getApplicationContext(), "Enter birth date", Toast.LENGTH_SHORT).show();
+                }
+                else if(name.getText().toString() == "" && page.getText().toString() == "" && birthDate.getText().toString() == "")
+                {
+                    String a = page.getText().toString();
+                    patientage = Integer.parseInt(a);
+
+                    patientname = name.getText().toString();
+
+                    born = birthDate.getText().toString();
+                    String match = "\\d{2}/\\d{2}/\\d{4}";
+                    if(!born.matches(match))
+                        Toast.makeText(getApplicationContext(), "Enter valid date format", Toast.LENGTH_SHORT).show();
+                    else
+                    {
+                        postMenstrual = postMenstrualAge(born);
+                    }
+
+                    dispatchTakePictureIntent();
                 }
                 else
                 {
@@ -184,6 +204,7 @@ public class NewPatient extends AppCompatActivity
                 results.putExtra("Notes", Unotes);
                 results.putExtra("Birthday", born);
                 results.putExtra("Post menstrual age", attempt);
+
 
                 name.getText().clear();
                 page.getText().clear();
@@ -263,24 +284,24 @@ public class NewPatient extends AppCompatActivity
     public void Processing()
     {
         //send the image through cleaning and save it in new bitmap out
-        Bitmap out = image;
-        fin = out;
+
+        Drawable plus = this.getResources().getDrawable(R.drawable.plus);
+        Drawable preplus = this.getResources().getDrawable(R.drawable.pre_plus);
+        Drawable noplus = this.getResources().getDrawable(R.drawable.no_plus);
+        Bitmap out = ((BitmapDrawable) noplus).getBitmap();
+        fin = Bitmap.createScaledBitmap(out,224, 224, false);
         diagnosis();
 
     }
 
     public void diagnosis()
     {
-        double severity = 4.5;
-        boolean diseased = true;
-        if(diseased)
-        {
-            result = "Treat now. Severity = " + severity;
-        }
-        else
-        {
-            result = "No danger.";
-        }
+
+        Diagnose d = new Diagnose(getAssets(), fin);
+        String[] hold = d.tensor();
+        result = "";
+        for(int i = 0; i < hold.length; i++)
+            result += hold[i] + "\n";
     }
 
     private int postMenstrualAge(String bday)

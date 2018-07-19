@@ -108,8 +108,8 @@
         android:background="@android:color/darker_gray"
         android:ems="10"
         android:hint="MM/DD/YYYY"
-        android:inputType="date"
         android:imeOptions="actionDone"
+        android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/notes"
         app:layout_constraintStart_toStartOf="@+id/imageButton2" />
 
@@ -130,8 +130,8 @@
         android:layout_marginTop="75dp"
         android:background="@android:color/darker_gray"
         android:ems="10"
-        android:imeOptions="actionDone"
         android:hint="___ weeks"
+        android:imeOptions="actionDone"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/borth"
         app:layout_constraintStart_toStartOf="@id/imageButton2"

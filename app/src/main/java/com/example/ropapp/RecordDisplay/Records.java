@@ -69,14 +69,14 @@ public class Records extends AppCompatActivity {
         listOfData = new ArrayList<>();
 
 
-        FloatingActionButton f = findViewById(R.id.floatingActionButton);
-        f.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PatientInfo p = new PatientInfo("Joe", "05/29/2018", "32", "Treat now", "path", "date", "notes", 12);
-                patientListViewModel.NewPatient(p);
-            }
-        });
+//        FloatingActionButton f = findViewById(R.id.floatingActionButton);
+//        f.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                PatientInfo p = new PatientInfo("Joe", "05/29/2018", "32", "Treat now", "path", "date", "notes", 12);
+//                patientListViewModel.NewPatient(p);
+//            }
+//        });
 
     }
 

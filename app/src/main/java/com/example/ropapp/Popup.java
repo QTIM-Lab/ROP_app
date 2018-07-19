@@ -77,7 +77,7 @@ public class Popup extends AppCompatActivity {
         final String postMenstrual = getIntent().getStringExtra("Post menstrual age");
 
         final String results = getIntent().getStringExtra("Result");
-        String towrite = results + "\nPost menstrual age: " + postMenstrual + "weeks";
+        String towrite = results + "\nPost menstrual age: " + postMenstrual + " weeks";
         TextView display = findViewById(R.id.displayResults);
         display.setText(towrite);
 
