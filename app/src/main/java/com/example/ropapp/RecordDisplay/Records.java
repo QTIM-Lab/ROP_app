@@ -64,19 +64,7 @@ public class Records extends AppCompatActivity {
             }
         });
 
-
-        animalNames = new ArrayList<>();
         listOfData = new ArrayList<>();
-
-
-//        FloatingActionButton f = findViewById(R.id.floatingActionButton);
-//        f.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                PatientInfo p = new PatientInfo("Joe", "05/29/2018", "32", "Treat now", "path", "date", "notes", 12);
-//                patientListViewModel.NewPatient(p);
-//            }
-//        });
 
     }
 
@@ -85,7 +73,6 @@ public class Records extends AppCompatActivity {
         for(int i = 0; i < p.size(); i++)
             listOfData.add(0, p.get(i));
 
-        animalNames.add("BREAK");
 
         list = findViewById(R.id.recyclerView);
         list.setHasFixedSize(true);
@@ -96,6 +83,7 @@ public class Records extends AppCompatActivity {
         list.setAdapter(adapter);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(list.getContext(), 1);
         list.addItemDecoration(dividerItemDecoration);
+
 
     }
 

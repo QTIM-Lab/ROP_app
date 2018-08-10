@@ -18,8 +18,8 @@ public interface PatientInfoDao
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     Long insertNewPatient(PatientInfo newInfo);
 
-    @Query("SELECT * FROM PatientInfo WHERE name = :name")
-    LiveData<PatientInfo> getPatient(String name);
+    @Query("SELECT * FROM PatientInfo WHERE date = :date")
+    LiveData<PatientInfo> getPatient(String date);
 
     @Delete
     void deletePatient(PatientInfo toDelete);

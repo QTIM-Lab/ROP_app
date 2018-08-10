@@ -19,9 +19,9 @@ public class PatientInfoRepository
         return patientInfoDao.getAllPatientInfo();
     }
 
-    public LiveData<PatientInfo> getPatient(String patientName)
+    public LiveData<PatientInfo> getPatient(String date)
     {
-        return patientInfoDao.getPatient(patientName);
+        return patientInfoDao.getPatient(date);
     }
 
     public void deletePatient(PatientInfo patient)

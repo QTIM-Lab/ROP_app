@@ -9,26 +9,37 @@ public class PatientInfo
 {
     @PrimaryKey
     @NonNull
+    private String date;
     private String name;
     private String birthday;
-    private String postMenstrual;
-    private String diagnosis;
-    private String imagePath;
-    private String date;
-    private String notes;
+    //private String postMenstrual;
     private int gestationalAge;
+//    private String diagnosis;
+//    private String imagePath;
+    private String notes;
 
-    public PatientInfo(String name, String birthday, String postMenstrual, String diagnosis,
-                       String imagePath, String date, String notes, int gestationalAge)
+
+    public PatientInfo(String date, String name, String birthday, int gestationalAge, String notes) //, String postMenstrual, String diagnosis, String imagePath, String date, String notes
     {
+        this.date = date;
         this.name = name;
         this.birthday = birthday;
-        this.postMenstrual = postMenstrual;
-        this.diagnosis = diagnosis;
-        this.imagePath = imagePath;
-        this.date = date;
-        this.notes = notes;
+//        this.postMenstrual = postMenstrual;
+//        this.diagnosis = diagnosis;
+//        this.imagePath = imagePath;
+//        this.date = date;
+//        this.notes = notes;
         this.gestationalAge = gestationalAge;
+        this.notes = notes;
+    }
+
+    @NonNull
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(@NonNull String date) {
+        this.date = date;
     }
 
     public String getName() {
@@ -47,37 +58,37 @@ public class PatientInfo
         this.birthday = birthday;
     }
 
-    public String getPostMenstrual() {
-        return postMenstrual;
-    }
-
-    public void setPostMenstrual(String postMenstrual) {
-        this.postMenstrual = postMenstrual;
-    }
-
-    public String getDiagnosis() {
-        return diagnosis;
-    }
-
-    public void setDiagnosis(String diagnosis) {
-        this.diagnosis = diagnosis;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
+//    public String getPostMenstrual() {
+//        return postMenstrual;
+//    }
+//
+//    public void setPostMenstrual(String postMenstrual) {
+//        this.postMenstrual = postMenstrual;
+//    }
+//
+//    public String getDiagnosis() {
+//        return diagnosis;
+//    }
+//
+//    public void setDiagnosis(String diagnosis) {
+//        this.diagnosis = diagnosis;
+//    }
+//
+//    public String getImagePath() {
+//        return imagePath;
+//    }
+//
+//    public void setImagePath(String imagePath) {
+//        this.imagePath = imagePath;
+//    }
+//
+//    public String getDate() {
+//        return date;
+//    }
+//
+//    public void setDate(String date) {
+//        this.date = date;
+//    }
 
     public String getNotes() {
         return notes;

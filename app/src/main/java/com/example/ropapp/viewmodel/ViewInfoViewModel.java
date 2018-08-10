@@ -14,8 +14,8 @@ public class ViewInfoViewModel extends ViewModel
         this.repository = repository;
     }
 
-    public LiveData<PatientInfo> viewPatient(String ID)
+    public LiveData<PatientInfo> viewPatient(String date)
     {
-        return repository.getPatient(ID);
+        return repository.getPatient(date);
     }
 }

@@ -46,4 +46,7 @@ dependencies {
     //Tensorflow
     implementation 'org.tensorflow:tensorflow-android:+'
 
+    //tab dots
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+
 }

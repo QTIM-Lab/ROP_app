@@ -13,7 +13,7 @@ import java.lang.reflect.Array;
 
 public class Diagnose
 {
-    String[] results = new String[3];
+    float[] results = new float[3];
     private TensorFlowInferenceInterface inferenceInterface;
     private String inputName = "input_1_1";
     private String outputName = "pred0";
@@ -49,7 +49,7 @@ public class Diagnose
         outputNames = new String[] {outputName};
     }
 
-    public String[] tensor()
+    public float[] tensor()
     {
         // Copy the input data into TensorFlow.
         Trace.beginSection("feed");
@@ -67,7 +67,7 @@ public class Diagnose
         Trace.endSection();
 
         for(int i = 0; i < outputs.length; i++)
-            results[i] = outputs[i] + "";
+            results[i] = outputs[i];
 
         return results;
     }

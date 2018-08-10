@@ -6,8 +6,6 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
-
-
     <application
         android:name=".ROPApplication"
         android:allowBackup="true"
@@ -39,7 +37,10 @@
             android:theme="@style/AppTheme.PopMe" />
         <activity android:name=".RecordDisplay.Records" />
         <activity android:name=".RecordDisplay.RecordDetails" />
-        <activity android:name=".NewPatient"></activity>
+        <activity android:name=".NewPatient" />
+        <activity android:name=".exam.ExamRecyclerView" />
+        <activity android:name=".exam.NewExam" />
+        <activity android:name=".exam.ExamDetails"></activity>
     </application>
 
 </manifest>
