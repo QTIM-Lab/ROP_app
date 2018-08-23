@@ -1,8 +1,10 @@
 package com.example.ropapp.RecordDisplay;
 
+import android.app.SearchManager;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,7 +13,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.ropapp.MainActivity;
@@ -35,6 +39,7 @@ public class Records extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<String> animalNames;
+    private SearchView searchView;
 
     private ArrayList<PatientInfo> listOfData;
 
@@ -80,13 +85,11 @@ public class Records extends AppCompatActivity {
 
         adapter = new MyAdapter(listOfData, this);
 
+
         list.setAdapter(adapter);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(list.getContext(), 1);
         list.addItemDecoration(dividerItemDecoration);
 
 
     }
-
-
-
 }

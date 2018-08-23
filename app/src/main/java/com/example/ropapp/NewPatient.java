@@ -67,7 +67,7 @@ public class NewPatient extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_patient);
         image1 = findViewById(R.id.imageButton2);
-        camera = findViewById(R.id.button);
+
         keep = findViewById(R.id.yes);
         retake = findViewById(R.id.no);
         name = findViewById(R.id.name);

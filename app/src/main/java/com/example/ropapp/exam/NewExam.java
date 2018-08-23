@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 
 import com.example.ropapp.Diagnose;
+import com.example.ropapp.Image;
 import com.example.ropapp.R;
 import com.example.ropapp.ROPApplication;
 import com.example.ropapp.data.Exam;
@@ -118,6 +119,10 @@ public class NewExam extends AppCompatActivity {
         leftEye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Intent viewLeft = new Intent(getApplicationContext(), Image.class);
+//                viewLeft.putExtra("eye", imagepathL);
+//                startActivity(viewLeft);
+
                 PopupMenu popup = new PopupMenu(getApplicationContext(), leftEye);
                 popup.getMenuInflater().inflate(R.menu.retake_menu, popup.getMenu());
                 popup.show();
@@ -136,6 +141,10 @@ public class NewExam extends AppCompatActivity {
         rightEye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Intent viewRight = new Intent(getApplicationContext(), Image.class);
+//                viewRight.putExtra("eye", imagepathR);
+//                startActivity(viewRight);
+
                 PopupMenu popup = new PopupMenu(getApplicationContext(), rightEye);
                 popup.getMenuInflater().inflate(R.menu.retake_menu, popup.getMenu());
                 popup.show();

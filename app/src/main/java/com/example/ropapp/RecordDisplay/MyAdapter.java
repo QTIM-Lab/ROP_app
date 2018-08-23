@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
 {
 
     private ArrayList<PatientInfo> display = new ArrayList<>();
+    private ArrayList<PatientInfo> filtered;
     private Context context;
 
     public MyAdapter(ArrayList<PatientInfo> display, Context context) {
@@ -58,6 +61,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
     public int getItemCount() {
         return display.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {

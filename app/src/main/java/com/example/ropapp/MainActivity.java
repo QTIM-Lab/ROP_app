@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.ropapp.RecordDisplay.Records;
 
 public class MainActivity extends AppCompatActivity
 {
-    Button records, newPatient;
+    Button records, newPatient, test;
 
 
     @Override
@@ -37,5 +38,6 @@ public class MainActivity extends AppCompatActivity
                 startActivity(viewPatients);
             }
         });
+
     }
 }

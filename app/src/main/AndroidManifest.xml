@@ -32,15 +32,14 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity
-            android:name=".Popup"
-            android:theme="@style/AppTheme.PopMe" />
-        <activity android:name=".RecordDisplay.Records" />
+        <activity android:name=".Popup"/>
+
         <activity android:name=".RecordDisplay.RecordDetails" />
         <activity android:name=".NewPatient" />
         <activity android:name=".exam.ExamRecyclerView" />
         <activity android:name=".exam.NewExam" />
-        <activity android:name=".exam.ExamDetails"></activity>
+        <activity android:name=".exam.ExamDetails" />
+        <activity android:name=".Image"></activity>
     </application>
 
 </manifest>
