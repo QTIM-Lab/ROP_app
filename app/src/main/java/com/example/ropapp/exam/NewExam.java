@@ -24,7 +24,6 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 
 import com.example.ropapp.Diagnose;
-import com.example.ropapp.Image;
 import com.example.ropapp.R;
 import com.example.ropapp.ROPApplication;
 import com.example.ropapp.data.Exam;
@@ -244,7 +243,7 @@ public class NewExam extends AppCompatActivity {
         patientage = postMenstrualAge(birthDate);
     }
 
-    private int postMenstrualAge(String bday)
+    private int postMenstrualAge(String bday) //Calculates post menstrual age based on date
     {
 
         ArrayList<Integer> lengths = new ArrayList<Integer>(Arrays.asList(31,29,31,30,31,30,31,31,30,31,30,31));

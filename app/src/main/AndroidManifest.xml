@@ -39,7 +39,6 @@
         <activity android:name=".exam.ExamRecyclerView" />
         <activity android:name=".exam.NewExam" />
         <activity android:name=".exam.ExamDetails" />
-        <activity android:name=".Image"></activity>
     </application>
 
 </manifest>
