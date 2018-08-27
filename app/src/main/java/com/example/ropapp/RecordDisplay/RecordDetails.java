@@ -36,14 +36,6 @@ public class RecordDetails extends AppCompatActivity {
 
         viewInfoViewModel = ViewModelProviders.of(this, viewModelFactory).get(ViewInfoViewModel.class);
 
-//        String key = getIntent().getStringExtra("Name");
-//        viewInfoViewModel.viewPatient(key).observe(this, new Observer<PatientInfo>() {
-//            @Override
-//            public void onChanged(@Nullable PatientInfo patientInfo) {
-//                write.setText(patientInfo.getName() + "\n" + patientInfo.getBirthday());
-//            }
-//        });
-
 
     }
 }

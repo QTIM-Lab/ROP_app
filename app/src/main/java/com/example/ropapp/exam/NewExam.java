@@ -57,7 +57,7 @@ public class NewExam extends AppCompatActivity {
 
     NewExamViewModel newExamViewModel;
     @Override
-    protected void onCreate(Bundle savedInstanceState) { //TODO: either delete the notes function or display notes somewhere in ExamDetails
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_exam);
 
@@ -118,9 +118,6 @@ public class NewExam extends AppCompatActivity {
         leftEye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent viewLeft = new Intent(getApplicationContext(), Image.class);
-//                viewLeft.putExtra("eye", imagepathL);
-//                startActivity(viewLeft);
 
                 PopupMenu popup = new PopupMenu(getApplicationContext(), leftEye);
                 popup.getMenuInflater().inflate(R.menu.retake_menu, popup.getMenu());
@@ -136,13 +133,9 @@ public class NewExam extends AppCompatActivity {
             }
         });
 
-
         rightEye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent viewRight = new Intent(getApplicationContext(), Image.class);
-//                viewRight.putExtra("eye", imagepathR);
-//                startActivity(viewRight);
 
                 PopupMenu popup = new PopupMenu(getApplicationContext(), rightEye);
                 popup.getMenuInflater().inflate(R.menu.retake_menu, popup.getMenu());
@@ -207,7 +200,6 @@ public class NewExam extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQUEST_TAKE_PHOTO_ && resultCode == Activity.RESULT_OK){
 
-            //Ensure the path has been set
             if(isLeft)
             {
                 leftmap = BitmapFactory.decodeFile(lastImagePath);
@@ -342,11 +334,10 @@ public class NewExam extends AppCompatActivity {
 
     public String diagnosis(Bitmap fin)
     {
-
         Diagnose d = new Diagnose(getAssets(), fin);
-        float[] hold = d.tensor();
+        float[] hold = d.tensor(); //Sends image through tensorflow
         String diagnose = "";
-        for(int i = 0; i < hold.length; i++)
+        for(int i = 0; i < hold.length; i++) //makes a string of the probability of each option
             diagnose += hold[i] + "\n";
 
         float severity = hold[0] + (2*hold[1]) + (3*hold[2]);

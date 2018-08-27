@@ -7,24 +7,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.ropapp.Popup;
 import com.example.ropapp.R;
 import com.example.ropapp.data.PatientInfo;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
 {
 
     private ArrayList<PatientInfo> display = new ArrayList<>();
-    private ArrayList<PatientInfo> filtered;
     private Context context;
 
     public MyAdapter(ArrayList<PatientInfo> display, Context context) {

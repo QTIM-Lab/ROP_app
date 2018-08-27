@@ -7,8 +7,6 @@ import android.os.Trace;
 import org.tensorflow.Operation;
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
 
-import java.lang.reflect.Array;
-
 
 
 public class Diagnose

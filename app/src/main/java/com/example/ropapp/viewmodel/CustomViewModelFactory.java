@@ -2,7 +2,6 @@ package com.example.ropapp.viewmodel;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
-import android.support.annotation.NonNull;
 
 import com.example.ropapp.data.ExamRepository;
 import com.example.ropapp.data.PatientInfoRepository;

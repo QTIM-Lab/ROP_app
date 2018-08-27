@@ -15,7 +15,6 @@ import com.example.ropapp.ROPApplication;
 import com.example.ropapp.data.Exam;
 import com.example.ropapp.viewmodel.ExamListViewModel;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
