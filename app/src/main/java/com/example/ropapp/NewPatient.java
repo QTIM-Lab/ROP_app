@@ -155,19 +155,20 @@ public class NewPatient extends AppCompatActivity
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(name.getText().toString() == "")
+                int hold = name.getText().toString().length();
+                if(hold == 0)
                 {
                     Toast.makeText(getApplicationContext(), "Enter patient name", Toast.LENGTH_SHORT).show();
                 }
-                else if(page.getText().toString() == "")
+                else if(page.getText().toString().length() == 0)
                 {
                     Toast.makeText(getApplicationContext(), "Enter gestational age", Toast.LENGTH_SHORT).show();
                 }
-                else if(birthDate.getText().toString() == "")
+                else if(birthDate.getText().toString().length()== 0)
                 {
                     Toast.makeText(getApplicationContext(), "Enter birth date", Toast.LENGTH_SHORT).show();
                 }
-                else if(name.getText().toString() != "" && page.getText().toString() != "" && birthDate.getText().toString() != "")
+                else if(name.getText().toString().length() != 0 && page.getText().toString().length() != 0 && birthDate.getText().toString().length() != 0)
                 {
                     String a = page.getText().toString();
                     gestationalAge = Integer.parseInt(a);
@@ -176,18 +177,18 @@ public class NewPatient extends AppCompatActivity
                     String match = "\\d{2}/\\d{2}/\\d{4}";
                     if(!check.matches(match))
                         Toast.makeText(getApplicationContext(), "Enter valid date format", Toast.LENGTH_SHORT).show();
-                    else
+                    else {
                         born = birthDate.getText().toString();
+                        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+
+                        PatientInfo p = new PatientInfo(timeStamp, patientname, born, gestationalAge, Unotes);
+                        popupViewModel.NewPatient(p);
+                        Intent viewPatient = new Intent(getApplicationContext(), Popup.class);
+                        viewPatient.putExtra("key", p.getDate());
+                        startActivity(viewPatient);
+                        finish();
+                    }
                 }
-
-                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-
-                PatientInfo p = new PatientInfo(timeStamp, patientname, born, gestationalAge, Unotes);
-                popupViewModel.NewPatient(p);
-                Intent viewPatient = new Intent(getApplicationContext(), Popup.class);
-                viewPatient.putExtra("key", p.getDate());
-                startActivity(viewPatient);
-                finish();
             }
         });
 
