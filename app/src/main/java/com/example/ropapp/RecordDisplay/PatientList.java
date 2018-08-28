@@ -21,7 +21,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-public class Records extends AppCompatActivity {
+public class PatientList extends AppCompatActivity {
 
     private RecyclerView list;
     private RecyclerView.Adapter adapter;
@@ -37,7 +37,7 @@ public class Records extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_records);
+        setContentView(R.layout.activity_patient_list);
 
         ((ROPApplication) getApplication())
                 .getApplicationComponent()
@@ -46,7 +46,7 @@ public class Records extends AppCompatActivity {
 
         patientListViewModel = ViewModelProviders.of(this, viewModelFactory).get(PatientListViewModel.class);
 
-        patientListViewModel.getPatientList().observe(Records.this, new Observer<List<PatientInfo>>() {
+        patientListViewModel.getPatientList().observe(PatientList.this, new Observer<List<PatientInfo>>() {
             @Override
             public void onChanged(@Nullable List<PatientInfo> patientInfos) {
                 updateList(patientInfos);

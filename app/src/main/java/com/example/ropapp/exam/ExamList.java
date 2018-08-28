@@ -20,7 +20,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-public class ExamRecyclerView extends AppCompatActivity {
+public class ExamList extends AppCompatActivity {
 
     private String key;
     private RecyclerView list;
@@ -35,7 +35,7 @@ public class ExamRecyclerView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exam_recycler_view);
+        setContentView(R.layout.activity_exam_list);
 
         ((ROPApplication) getApplication())
                 .getApplicationComponent()
@@ -44,7 +44,7 @@ public class ExamRecyclerView extends AppCompatActivity {
         examListViewModel = ViewModelProviders.of(this, viewModelFactory).get(ExamListViewModel.class);
 
         key = getIntent().getStringExtra("key");
-        examListViewModel.getPatientsExams(key).observe(ExamRecyclerView.this, new Observer<List<Exam>>() {
+        examListViewModel.getPatientsExams(key).observe(ExamList.this, new Observer<List<Exam>>() {
             @Override
             public void onChanged(@Nullable List<Exam> exams) {
                 setList(exams);

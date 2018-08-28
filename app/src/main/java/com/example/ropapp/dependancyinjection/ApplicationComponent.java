@@ -2,13 +2,12 @@ package com.example.ropapp.dependancyinjection;
 
 import android.app.Application;
 
-import com.example.ropapp.exam.ExamDetails;
-import com.example.ropapp.exam.ExamRecyclerView;
+import com.example.ropapp.RecordDisplay.PatientList;
+import com.example.ropapp.exam.ExamView;
+import com.example.ropapp.exam.ExamList;
 import com.example.ropapp.exam.NewExam;
 import com.example.ropapp.NewPatient;
 import com.example.ropapp.PatientView;
-import com.example.ropapp.RecordDisplay.RecordDetails;
-import com.example.ropapp.RecordDisplay.Records;
 
 import javax.inject.Singleton;
 
@@ -19,13 +18,12 @@ import dagger.Component;
 @Component(modules = {ApplicationModule.class, RoomModule.class})
 public interface ApplicationComponent {
 
-    void inject(RecordDetails recordDetails);
-    void inject(Records records);
+    void inject(PatientList patientList);
     void inject(PatientView patientView);
     void inject(NewPatient newPatient);
     void inject(NewExam newExam);
-    void inject(ExamDetails examDetails);
-    void inject(ExamRecyclerView examRecyclerView);
+    void inject(ExamView examDetails);
+    void inject(ExamList examList);
 
     Application application();
 

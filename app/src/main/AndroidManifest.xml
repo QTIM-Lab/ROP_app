@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".RecordDisplay.Records" />
+        <activity android:name=".RecordDisplay.PatientList" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -36,11 +36,10 @@
 
         <activity android:name=".PatientView"/>
 
-        <activity android:name=".RecordDisplay.RecordDetails" />
         <activity android:name=".NewPatient" />
-        <activity android:name=".exam.ExamRecyclerView" />
+        <activity android:name=".exam.ExamList" />
         <activity android:name=".exam.NewExam" />
-        <activity android:name=".exam.ExamDetails" />
+        <activity android:name=".exam.ExamView" />
     </application>
 
 </manifest>

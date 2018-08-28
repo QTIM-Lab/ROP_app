@@ -23,7 +23,7 @@ import javax.inject.Inject;
 
 import me.relex.circleindicator.CircleIndicator;
 
-public class ExamDetails extends AppCompatActivity {
+public class ExamView extends AppCompatActivity {
 
     private String key;
     private Exam thisExam;
@@ -37,7 +37,7 @@ public class ExamDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exam_details);
+        setContentView(R.layout.activity_exam_view);
 
         ((ROPApplication) getApplication())
                 .getApplicationComponent()
@@ -56,7 +56,7 @@ public class ExamDetails extends AppCompatActivity {
         });
 
 
-        examDetailsViewModel.ViewExam(key).observe(ExamDetails.this, new Observer<Exam>() {
+        examDetailsViewModel.ViewExam(key).observe(ExamView.this, new Observer<Exam>() {
             @Override
             public void onChanged(@Nullable Exam exam) {
                 setExam(exam);
