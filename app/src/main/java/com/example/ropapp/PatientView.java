@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.ropapp.data.PatientInfo;
-import com.example.ropapp.exam.ExamRecyclerView;
+import com.example.ropapp.exam.ExamList;
 import com.example.ropapp.exam.NewExam;
 import com.example.ropapp.viewmodel.ViewInfoViewModel;
 
@@ -32,7 +32,7 @@ public class PatientView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popup);
+        setContentView(R.layout.activity_patient_view);
 
         ((ROPApplication) getApplication())
                 .getApplicationComponent()
@@ -111,7 +111,7 @@ public class PatientView extends AppCompatActivity {
         viewexams.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startView = new Intent(getApplicationContext(), ExamRecyclerView.class);
+                Intent startView = new Intent(getApplicationContext(), ExamList.class);
                 startView.putExtra("key", key);
                 startActivity(startView);
             }

@@ -108,7 +108,7 @@ public class NewExam extends AppCompatActivity {
                 Exam e = new Exam(date, key, pMenstrual, leftResult, rightResult, imagepathR, imagepathL, Enotes.getText().toString(), formatDate);
                 newExamViewModel.NewExam(e);
 
-                Intent viewExam = new Intent(getApplicationContext(), ExamDetails.class);
+                Intent viewExam = new Intent(getApplicationContext(), ExamView.class);
                 viewExam.putExtra("date", date);
                 startActivity(viewExam);
                 finish();

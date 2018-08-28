@@ -43,7 +43,7 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.Viewholder>
         viewHolder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent openExam = new Intent(context, ExamDetails.class);
+                Intent openExam = new Intent(context, ExamView.class);
                 openExam.putExtra("date", exams.get(pos).getDate());
                 context.startActivity(openExam);
             }
