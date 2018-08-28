@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.ropapp.Popup;
+import com.example.ropapp.PatientView;
 import com.example.ropapp.R;
 import com.example.ropapp.data.PatientInfo;
 
@@ -44,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
         viewHolder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent viewDetails = new Intent(context, Popup.class);
+                Intent viewDetails = new Intent(context, PatientView.class);
                 viewDetails.putExtra("key", display.get(pos).getDate());
                 context.startActivity(viewDetails);
 

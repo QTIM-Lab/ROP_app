@@ -6,7 +6,7 @@ import com.example.ropapp.exam.ExamDetails;
 import com.example.ropapp.exam.ExamRecyclerView;
 import com.example.ropapp.exam.NewExam;
 import com.example.ropapp.NewPatient;
-import com.example.ropapp.Popup;
+import com.example.ropapp.PatientView;
 import com.example.ropapp.RecordDisplay.RecordDetails;
 import com.example.ropapp.RecordDisplay.Records;
 
@@ -21,7 +21,7 @@ public interface ApplicationComponent {
 
     void inject(RecordDetails recordDetails);
     void inject(Records records);
-    void inject(Popup popup);
+    void inject(PatientView patientView);
     void inject(NewPatient newPatient);
     void inject(NewExam newExam);
     void inject(ExamDetails examDetails);

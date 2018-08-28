@@ -18,7 +18,7 @@ import com.example.ropapp.viewmodel.ViewInfoViewModel;
 
 import javax.inject.Inject;
 
-public class Popup extends AppCompatActivity {
+public class PatientView extends AppCompatActivity {
 
     Button newexam, viewexams;
     TextView nameView, bdayView, ageView, notesView;
